@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MentorApp
 {
-    class DataManipulator
+    public class DataManipulator
     {
         /// <summary>
         /// Метод получения строки с максимальным значением.
@@ -38,7 +38,7 @@ namespace MentorApp
         /// <param name="str">Входная строка.</param>
         /// <param name="delimeters">Массив разделителей.</param>
         /// <returns>Возвращает список элементов.</returns>
-        private List<string> GetStringElems(string str, char[] delimeters = null)
+        public List<string> GetStringElems(string str, char[] delimeters = null)
         {
             // На случай, если захотим передать свой массив разделителей
             return str.Split(delimeters == null ? new char[] { '/', '\\', '.', ',' } : delimeters).ToList();
@@ -50,7 +50,7 @@ namespace MentorApp
         /// <param name="elements">Входящий список элементов.</param>
         /// <param name="isBad">Выходной флаг про строку с "плохим" значением.</param>
         /// <returns>Возвращает сумму элементов в списке.</returns>
-        private int GetStrSumm(List<string> elements, out bool isBad)
+        public int GetStrSumm(List<string> elements, out bool isBad)
         {
             int tmpNum, summ = 0;
             isBad = false;

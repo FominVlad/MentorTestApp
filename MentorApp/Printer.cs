@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MentorApp
 {
-    static class Printer
+    public static class Printer
     {
         /// <summary>
         /// Метод печати в консоль сообщения об успехе.

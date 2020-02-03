@@ -13,6 +13,31 @@ namespace MentorApp.Tests
         }
 
         [Test]
+        public void GetMaxLineTest()
+        {
+            // Arrange
+            List<string> testList = new List<string>()
+            {
+                "1, 1",
+                "4, 4",
+                "3, sdf",
+                "2, 2"
+            };
+
+            int expectedMaxIndex = 1;
+            List<int> expectedBadList = new List<int>() { 2 };
+
+            List<int> resultBadList;
+
+            // Act
+            int resultMaxIndex = dataManipulator.GetMaxLine(testList, out resultBadList);
+
+            // Assert
+            Assert.AreEqual(expectedMaxIndex, resultMaxIndex);
+            Assert.AreEqual(expectedBadList, resultBadList);
+        }
+
+        [Test]
         public void GetStringElemsTest()
         {
             // Arrange
@@ -25,6 +50,31 @@ namespace MentorApp.Tests
 
             // Assert
             Assert.AreEqual(expectedList, resultList);
+        }
+
+        [Test]
+        public void GetStrSummTest()
+        {
+            // Arrange
+            List<string> testList = new List<string>()
+            {
+                "1",
+                "4",
+                "sdf",
+                "2"
+            };
+
+            int expectedSumm = 7;
+            bool expectedIsBad = true;
+
+            bool resultIsBad;
+
+            // Act
+            int resultSumm = dataManipulator.GetStrSumm(testList, out resultIsBad);
+
+            // Assert
+            Assert.AreEqual(expectedSumm, resultSumm);
+            Assert.AreEqual(expectedIsBad, resultIsBad);
         }
     }
 }
